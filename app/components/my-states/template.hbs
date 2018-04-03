@@ -1,0 +1,13 @@
+{{#if states.isRunning}}
+    {{loading-mask}}
+{{else if states.error}}
+    <div class="text-center">        
+        <h1>Error occurred</h1>
+    </div>
+{{else if states.value}}
+    <div class="text-center">
+        <h1>{{states.value.length}}</h1>
+    </div>
+{{/if}}
+
+{{yield}}

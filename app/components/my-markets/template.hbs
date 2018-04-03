@@ -1,0 +1,13 @@
+{{#if markets.isRunning}}
+    {{loading-mask}}
+{{else if markets.error}}
+    <div class="text-center">
+        <h1>Error occurred</h1>
+    </div>
+{{else if markets.value}}
+    <div class="text-center">
+        <h1>{{markets.value.length}}</h1>
+    </div>
+{{/if}}
+
+{{yield}}

@@ -1,0 +1,32 @@
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">Properties Count</div>
+            <div class="panel-body">
+                {{my-properties properties=model.properties}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">States Count</div>
+            <div class="panel-body">
+                {{my-states states=model.states}}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">Markets Count</div>
+            <div class="panel-body">
+                {{my-markets markets=model.markets}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 text-center">
+    {{#link-to 'here'}}Here{{/link-to}}
+</div>
+
+{{outlet}}
