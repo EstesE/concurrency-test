@@ -1,12 +1,12 @@
-{{#if markets.isRunning}}
+{{#if tags.isRunning}}
     {{loading-mask}}
-{{else if markets.error}}
+{{else if tags.error}}
     <div class="text-center">
         <h1>Error occurred</h1>
     </div>
-{{else if markets.value}}
+{{else if tags.value}}
     <div class="text-center">
-        <h1>{{markets.value.length}}</h1>
+        <h1>{{tags.value.length}}</h1>
     </div>
 {{/if}}
 

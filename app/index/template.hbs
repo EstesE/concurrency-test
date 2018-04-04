@@ -1,31 +1,41 @@
 
-<div class="col-md-12">
+<div>
     <div class="col-md-4">
         <div class="panel panel-info">
-            <div class="panel-heading">Properties Count</div>
+            <div class="panel-heading">Total Posts Count</div>
             <div class="panel-body">
-                {{my-properties properties=model.properties}}
+                {{my-posts posts=model.posts}}
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-info">
-            <div class="panel-heading">States Count</div>
+            <div class="panel-heading">Total Comments Count</div>
             <div class="panel-body">
-                {{my-states states=model.states}}
+                {{my-comments post=model.comments}}
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="panel panel-info">
-            <div class="panel-heading">Markets Count</div>
+            <div class="panel-heading">Total Tags Count</div>
             <div class="panel-body">
-                {{my-markets markets=model.markets}}
+                {{my-tags tags=model.tags}}
             </div>
         </div>
     </div>
 </div>
 <div class="col-md-12 text-center">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Random Post</div>
+        {{#if model.tags.isRunning}}
+            <h4>...loading...</h4>
+        {{else if model.tags.error}}
+            <h4>...error...</h4>
+        {{else}}
+        <h4>{{model.post.value.title}}</h4>
+        {{/if}}
+    </div>
     {{#link-to 'here'}}Here{{/link-to}}
 </div>
 

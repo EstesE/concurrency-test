@@ -1,12 +1,12 @@
-{{#if states.isRunning}}
+{{#if post.isRunning}}
     {{loading-mask}}
-{{else if states.error}}
+{{else if post.error}}
     <div class="text-center">        
         <h1>Error occurred</h1>
     </div>
-{{else if states.value}}
+{{else if post.value}}
     <div class="text-center">
-        <h1>{{states.value.length}}</h1>
+        <h1>{{post.value.length}}</h1>
     </div>
 {{/if}}
 

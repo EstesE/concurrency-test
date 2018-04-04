@@ -1,13 +1,12 @@
-{{#if properties.isRunning}}
+{{#if posts.isRunning}}
     {{loading-mask}}
-{{else if properties.error}}
+{{else if posts.error}}
     <div class="text-center">
         <h1>Error occurred</h1>
     </div>
-{{else if properties.value}}
+{{else if posts.value}}
     <div class="text-center">
-        <h1>{{properties.value.length}}</h1>
+        <h1>{{posts.value.length}}</h1>
     </div>
 {{/if}}
-
 {{yield}}
