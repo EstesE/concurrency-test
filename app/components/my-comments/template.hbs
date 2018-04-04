@@ -1,12 +1,12 @@
-{{#if post.isRunning}}
+{{#if comments.isRunning}}
     {{loading-mask}}
-{{else if post.error}}
+{{else if comments.error}}
     <div class="text-center">        
-        <h1>Error occurred</h1>
+        <h1>{{comments.error.message}}</h1>
     </div>
-{{else if post.value}}
+{{else if comments.value}}
     <div class="text-center" style="margin-top: 17%;">
-        <h1>{{post.value.length}}</h1>
+        <h1>{{comments.value.length}}</h1>
     </div>
 {{/if}}
 

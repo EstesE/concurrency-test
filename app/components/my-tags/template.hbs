@@ -2,7 +2,7 @@
     {{loading-mask}}
 {{else if tags.error}}
     <div class="text-center">
-        <h1>Error occurred</h1>
+        <h1>{{tags.error.message}}</h1>
     </div>
 {{else if tags.value}}
     <div class="text-center" style="margin-top: 17%;">
