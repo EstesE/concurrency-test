@@ -3,7 +3,7 @@
     <div class="col-md-4">
         <div class="panel panel-info">
             <div class="panel-heading">Total Posts Count</div>
-            <div class="panel-body">
+            <div class="panel-body" style="min-height: 185px;">
                 {{my-posts posts=model.posts}}
             </div>
         </div>
@@ -11,7 +11,7 @@
     <div class="col-md-4">
         <div class="panel panel-info">
             <div class="panel-heading">Total Comments Count</div>
-            <div class="panel-body">
+            <div class="panel-body" style="min-height: 185px;">
                 {{my-comments post=model.comments}}
             </div>
         </div>
@@ -19,7 +19,7 @@
     <div class="col-md-4">
         <div class="panel panel-info">
             <div class="panel-heading">Total Tags Count</div>
-            <div class="panel-body">
+            <div class="panel-body" style="min-height: 185px;">
                 {{my-tags tags=model.tags}}
             </div>
         </div>
@@ -33,7 +33,7 @@
         {{else if model.tags.error}}
             <h4>...error...</h4>
         {{else}}
-        <h4>{{model.post.value.title}}</h4>
+        <h4><i>id</i>: {{model.post.value.id}} - <i>title</i>: {{model.post.value.title}}</h4>
         {{/if}}
     </div>
     {{#link-to 'here'}}Here{{/link-to}}
