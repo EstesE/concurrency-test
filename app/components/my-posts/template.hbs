@@ -4,9 +4,9 @@
     <div class="text-center">
         <h1>{{posts.error.message}}</h1>
     </div>
-{{else if posts.value}}
+{{else if posts.length}}
     <div class="text-center" style="margin-top: 17%;">
-        <h1>{{posts.value.length}}</h1>
+        <h1>{{posts.length}}</h1>
     </div>
 {{/if}}
 {{yield}}

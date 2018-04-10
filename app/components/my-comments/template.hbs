@@ -2,11 +2,11 @@
     {{loading-mask}}
 {{else if comments.error}}
     <div class="text-center">        
-        <h1>{{comments.error.message}}</h1>
+        <h1>ERROR{{comments.error.message}}</h1>
     </div>
-{{else if comments.value}}
+{{else if comments.length}}
     <div class="text-center" style="margin-top: 17%;">
-        <h1>{{comments.value.length}}</h1>
+        <h1>{{comments.length}}</h1>
     </div>
 {{/if}}
 
