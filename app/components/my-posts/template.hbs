@@ -2,7 +2,7 @@
     {{loading-mask}}
 {{else if posts.error}}
     <div class="text-center">
-        <h1>{{posts.error.message}}</h1>
+        {{posts.error.message}}
     </div>
 {{else if posts.length}}
     <div class="text-center" style="margin-top: 17%;">

@@ -2,12 +2,11 @@
     {{loading-mask}}
 {{else if tags.error}}
     <div class="text-center">
-        <h1>{{tags.error.message}}</h1>
+        {{tags.error.message}}
     </div>
 {{else if tags.length}}
     <div class="text-center" style="margin-top: 17%;">
         <h1>{{tags.length}}</h1>
     </div>
 {{/if}}
-
 {{yield}}

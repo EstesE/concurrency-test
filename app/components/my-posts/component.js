@@ -1,26 +1,23 @@
 import Component from '@ember/component';
-import { task } from 'ember-concurrency';
-import { get, set } from '@ember/object';
-import { isPresent } from '@ember/utils';
+import { task, timeout } from 'ember-concurrency';
+import { set } from '@ember/object';
 
 export default Component.extend({
 
     findPostsTask: task(function * () {
+        yield timeout(3000); // Testing: Added so we have time to cancel
+        console.log('starting `findPostsTask`');
         return set(this, 'posts', yield fetch(`http://localhost:3000/posts?_delay=4000`).then(response => {
             return response.json();
         }));
     }),
 
     init() {
-        let component = this;
-        component._super(...arguments);
+        this._super(...arguments);
         this.set('posts', this.get('findPostsTask').perform());
     },
 
-    didReceiveAttrs(query) {
-        if (isPresent(query)) {
-            // TODO: Wire this up
-            get(this, 'findPostsTask').perform(query);
-        }
+    didDestroyElement() {
+        this.get('findPostsTask').cancelAll();
     }
 });

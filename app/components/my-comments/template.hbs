@@ -2,7 +2,7 @@
     {{loading-mask}}
 {{else if comments.error}}
     <div class="text-center">        
-        <h1>ERROR{{comments.error.message}}</h1>
+        {{comments.error.message}}
     </div>
 {{else if comments.length}}
     <div class="text-center" style="margin-top: 17%;">

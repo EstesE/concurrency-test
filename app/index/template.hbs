@@ -31,7 +31,7 @@
         {{#if model.tags.isRunning}}
             <h4>...loading...</h4>
         {{else if model.tags.error}}
-            <h4>...{{model.tags.error.message}}...</h4>
+            ...{{model.tags.error.message}}...
         {{else}}
         <h4><i>id</i>: {{model.post.value.id}} - <i>title</i>: {{model.post.value.title}}</h4>
         {{/if}}

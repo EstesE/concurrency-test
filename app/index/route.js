@@ -1,12 +1,15 @@
 import Route from '@ember/routing/route';
-import { task, waitForProperty } from 'ember-concurrency';
+import { task, timeout, waitForProperty } from 'ember-concurrency';
+import { isPresent } from '@ember/utils';
 
 export default Route.extend({
     posts: null,
     post: null,
 
     randomItem: function (items) {
-        return items[Math.floor(Math.random() * items.length)];
+        if (isPresent(items)) {
+            return items[Math.floor(Math.random() * items.length)];
+        }
     },
 
     model() {
@@ -17,6 +20,8 @@ export default Route.extend({
     },
 
     findPostsTask: task(function * () {
+        yield timeout(3000); // Testing: Added so we have time to cancel
+        console.log('starting `findPostsTask in route`');
         return yield fetch(`http://localhost:3000/posts`).then(response => {
             return response.json();
         });
@@ -25,5 +30,9 @@ export default Route.extend({
     findPostTask: task(function * () {
         yield waitForProperty(this, 'findPostsTask.isIdle');
         return this.randomItem(this.get('findPostsTask.last.value'));
-    })
+    }),
+
+    deactivate() {
+        this.get('findPostsTask').cancelAll();
+    }
 });
