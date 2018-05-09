@@ -1,6 +1,6 @@
 {
   "name": "concurrency-test",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Small description for concurrency-test goes here",
   "license": "MIT",
@@ -30,6 +30,7 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^4.1.1",
+    "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-sass": "^7.1.7",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
